@@ -1,1 +1,11 @@
-export class Challenge {}
+export abstract class Challenge {
+  title: string;
+  answer: string;
+
+  constructor(title: string) {
+    this.title = title;
+    this.answer = '';
+  }
+
+  public abstract solveChallenge(multiplesOf: number[], limit: number): string;
+}
