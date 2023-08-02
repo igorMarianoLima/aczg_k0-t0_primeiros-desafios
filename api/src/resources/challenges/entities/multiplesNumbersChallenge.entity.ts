@@ -1,7 +1,7 @@
 import { Challenge } from './challenge.entity';
 
 export class MultiplesNumbersChallenge extends Challenge {
-  public solveChallenge(multiplesOf: number[], limit: number): string {
+  public solveChallenge(multiplesOf: number[], limit: number): number {
     let numbersMultiplesSum = 0;
 
     for (let number = 1; number <= limit; number++) {
@@ -10,7 +10,7 @@ export class MultiplesNumbersChallenge extends Challenge {
       }
     }
 
-    this.answer = numbersMultiplesSum.toString();
+    this.answer = numbersMultiplesSum;
     return this.answer;
   }
 }
