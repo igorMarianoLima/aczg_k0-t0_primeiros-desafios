@@ -3,6 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { MultiplesNumbersChallenge } from './entities/multiplesNumbersChallenge.entity';
 import { SolvedChallengeDto } from './dto/solved-challenge.dto';
 import { FibonacciNumbersChallenge } from './entities/fibonacciNumbersChallenge.entity';
+import { PrimeNumbersChallenge } from './entities/primeNumbersChallenge.entity';
 
 @Injectable()
 export class ChallengesService {
@@ -25,6 +26,13 @@ export class ChallengesService {
     );
 
     challenge.solveChallenge(fibonacciLimit);
+
+    return challenge;
+  }
+
+  solvePrimeFactors(number: number): SolvedChallengeDto {
+    const challenge = new PrimeNumbersChallenge(`Fatores primos`);
+    challenge.solveChallenge(number);
 
     return challenge;
   }

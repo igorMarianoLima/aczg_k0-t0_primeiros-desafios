@@ -3,6 +3,7 @@ import { ChallengesService } from './challenges.service';
 
 import { GetMultiplesNumbersDto } from './dto/get-multiples-numbers.dto';
 import { GetFibonacciPairsSumDto } from './dto/get-fibonacci-pairs-sum.dto';
+import { GetPrimeFactorsDto } from './dto/get-prime-factors.dto';
 
 @Controller('challenges')
 export class ChallengesController {
@@ -19,5 +20,10 @@ export class ChallengesController {
   @Get('fibonacci')
   solveFibonacciPairsTermsSum(@Body() body: GetFibonacciPairsSumDto) {
     return this.challengesService.solveFibonacci(body.limit);
+  }
+
+  @Get('prime-factors')
+  solvePrimeFactors(@Body() body: GetPrimeFactorsDto) {
+    return this.challengesService.solvePrimeFactors(body.number);
   }
 }
