@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { ChallengesRoutingModule } from './challenges-routing.module';
 import { ChallengesComponent } from './challenges.component';
 
+import { CoreModule } from 'src/app/core/core.module';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -11,7 +14,9 @@ import { ChallengesComponent } from './challenges.component';
   ],
   imports: [
     CommonModule,
-    ChallengesRoutingModule
+    ChallengesRoutingModule,
+    CoreModule,
+    FormsModule
   ]
 })
 export class ChallengesModule { }

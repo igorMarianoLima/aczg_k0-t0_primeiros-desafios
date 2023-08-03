@@ -1,1 +1,73 @@
-<p>challenges works!</p>
+<app-default-layout>
+    <header class="header">
+        <h1>K0T0 - Primeiros Desafios</h1>
+    </header>
+
+    <section class="challenge-container">
+        <header class="header">
+            <h2>Soma de Números múltiplos</h2>
+        </header>
+
+        <form (submit)="solveMultipleNumbers()" class="form">
+            <div class="input-container">
+                <label htmlFor="multiplesOf">Números múltiplos de:</label>
+                <input id="multiplesOf" name="multiplesOf" type="text" [(ngModel)]="multiplesOf" />
+            </div>
+
+            <div class="input-container">
+                <label htmlFor="multiplesBelow">Números abaixo de:</label>
+                <input id="multiplesBelow" name="multiplesBelow" type="number" min="0" step="1" [(ngModel)]="multiplesBelow" />
+            </div>
+
+            <button class="form-action">
+                Ver resposta
+            </button>
+        </form>
+
+        <div *ngIf="multiples" class="answer-container">
+            <p>{{ multiples }}</p>
+        </div>
+    </section>
+
+    <section class="challenge-container">
+        <header class="header">
+            <h2>Números pares na sequência Fibonacci</h2>
+        </header>
+
+        <form (submit)="solveFibonacci()" class="form">
+            <div class="input-container">
+                <label htmlFor="fibonacciLimit">Soma máxima dos Pares:</label>
+                <input id="fibonacciLimit" name="fibonacciLimit" type="text" [(ngModel)]="fibonacciLimit" />
+            </div>
+
+            <button class="form-action">
+                Ver resposta
+            </button>
+        </form>
+
+        <div *ngIf="fibonacciPairsSum" class="answer-container">
+            <p>{{ fibonacciPairsSum }}</p>
+        </div>
+    </section>
+
+    <section class="challenge-container">
+        <header class="header">
+            <h2>Maior Fator Primo</h2>
+        </header>
+
+        <form (submit)="solvePrimeFactors()" class="form">
+            <div class="input-container">
+                <label htmlFor="numberToFatorate">Número para fatorar:</label>
+                <input id="numberToFatorate" name="numberToFatorate" type="text" [(ngModel)]="numberToFactorate" />
+            </div>
+
+            <button class="form-action">
+                Ver resposta
+            </button>
+        </form>
+
+        <div *ngIf="largestPrime" class="answer-container">
+            <p>{{ largestPrime }}</p>
+        </div>
+    </section>
+</app-default-layout>
