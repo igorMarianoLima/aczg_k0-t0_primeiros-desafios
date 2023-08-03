@@ -14,6 +14,6 @@ export class ChallengesService {
   ) { }
 
   solveChallenge(challengeEndpoint: string, body: any) {
-    return this.http.post(`${this.apiBaseUrl}/challenges/${challengeEndpoint}`, body)
+    return this.http.post<any>(`${this.apiBaseUrl}/challenges/${challengeEndpoint}`, body)
   }
 }
