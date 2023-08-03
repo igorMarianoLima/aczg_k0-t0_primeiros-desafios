@@ -12,6 +12,9 @@ import { DefaultLayoutComponent } from './layouts/default-layout/default-layout.
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    DefaultLayoutComponent
   ]
 })
 export class CoreModule { }
