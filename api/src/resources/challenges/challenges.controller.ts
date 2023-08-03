@@ -2,6 +2,7 @@ import { Controller, Get, Body } from '@nestjs/common';
 import { ChallengesService } from './challenges.service';
 
 import { GetMultiplesNumbersDto } from './dto/get-multiples-numbers.dto';
+import { GetFibonacciPairsSumDto } from './dto/get-fibonacci-pairs-sum.dto';
 
 @Controller('challenges')
 export class ChallengesController {
@@ -13,5 +14,10 @@ export class ChallengesController {
       body.multiplesOf,
       body.limit,
     );
+  }
+
+  @Get('fibonacci')
+  solveFibonacciPairsTermsSum(@Body() body: GetFibonacciPairsSumDto) {
+    return this.challengesService.solveFibonacci(body.limit);
   }
 }
