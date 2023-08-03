@@ -1,7 +1,7 @@
 import { Challenge } from './challenge.entity';
 
 export class FibonacciNumbersChallenge extends Challenge {
-  public solveChallenge(limit: number): number {
+  public solveChallenge(limit: number): string {
     let pairsTermsSum = 2;
 
     const fibonacciSequence = (penultime = 1, lastNumber = 2) => {
@@ -17,7 +17,7 @@ export class FibonacciNumbersChallenge extends Challenge {
     };
 
     fibonacciSequence();
-    this.answer = pairsTermsSum;
+    this.answer = pairsTermsSum.toString();
 
     return this.answer;
   }
