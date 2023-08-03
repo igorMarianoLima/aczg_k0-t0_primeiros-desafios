@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { DefaultLayoutComponent } from './layouts/default-layout/default-layout.component';
 
+import { RouterLink } from '@angular/router';
+
 
 
 @NgModule({
@@ -11,7 +13,8 @@ import { DefaultLayoutComponent } from './layouts/default-layout/default-layout.
     DefaultLayoutComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterLink
   ],
   exports: [
     DefaultLayoutComponent
