@@ -2,7 +2,7 @@ import { Challenge } from './challenge.entity';
 
 export class PrimeNumbersChallenge extends Challenge {
   solveChallenge(number: number) {
-    let primeFactors = [];
+    const primeFactors = [];
 
     const factoreByPrime = (number: number) => {
       for (let factor = 2; factor <= number; factor++) {
@@ -34,9 +34,8 @@ export class PrimeNumbersChallenge extends Challenge {
     };
 
     factoreByPrime(number);
-    primeFactors = [...new Set(primeFactors)];
 
-    this.answer = primeFactors.join(', ');
+    this.answer = Math.max(...primeFactors).toString();
     return this.answer;
   }
 }
